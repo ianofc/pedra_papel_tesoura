@@ -41,6 +41,13 @@ def game():
     computer_choice = None
     result = None
 
+    # Tradução das escolhas para exibição
+    choices_translation = {
+        "rock": "Pedra",
+        "paper": "Papel",
+        "scissors": "Tesoura"
+    }
+
     while running:
         screen.fill(white)
 
@@ -75,8 +82,8 @@ def game():
 
         # Exibir escolhas e resultado
         if player_choice:
-            display_message(f"Você escolheu: {player_choice}", black, -100)
-            display_message(f"Computador escolheu: {computer_choice}", black, 0)
+            display_message(f"Você escolheu: {choices_translation[player_choice]}", black, -100)
+            display_message(f"Computador escolheu: {choices_translation[computer_choice]}", black, 0)
             display_message(result, black, 100)
 
         pygame.display.flip()
